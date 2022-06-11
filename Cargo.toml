@@ -1,0 +1,23 @@
+[package]
+name = "cc-args"
+version = "0.1.0"
+edition = "2021"
+description = "The clue between pkg-config and bindgen, cc"
+license-file = "LICENSE"
+documentation = "https://docs.rs/cc-args"
+repository = "https://github.com/shurizzle/cc-args"
+homepage = "https://github.com/shurizzle/cc-args"
+keywords = ["build", "build-dependencies"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pkg-config = { version = "0.3.25", optional = true }
+bindgen = { version = "0.60.1", optional = true }
+cc = { version ="1.0.73", optional = true }
+
+[features]
+default = []
+pkg-config = ["dep:pkg-config"]
+bindgen = ["dep:bindgen"]
+cc = ["dep:cc"]
